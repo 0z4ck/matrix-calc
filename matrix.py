@@ -48,11 +48,11 @@ def genExo(exo_id,difficulty):
     matrix_a = randGenMatrix(m,c,difficulty)
     matrix_b = randGenMatrix(c,n,difficulty)
 
-    print "{}\n *\n{}".format(prettifier(matrix_a),prettifier(matrix_b))
+    print "Exo_{}\n{}\n *\n{}\n\n\n".format(exo_id, prettifier(matrix_a),prettifier(matrix_b))
     f = open("answer.txt","a")
 
     p = multiply(matrix_a,matrix_b)
-    f.write("{}:\n{}\n\n".format(exo_id, prettifier(p)))
+    f.write("Exo_{}:\n{}\n\n".format(exo_id, prettifier(p)))
     f.close()
 
     
