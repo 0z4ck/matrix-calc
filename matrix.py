@@ -1,4 +1,4 @@
-
+import random
 
 def multiply(matrix_a,matrix_b):
     # check if each row has the same length
@@ -30,5 +30,7 @@ def multiply(matrix_a,matrix_b):
     return product
 
 
+def randGenMatrix(m,n,absolute_max=9):
+    return [[random.randrange(absolute_max*-1,absolute_max+1) for a in range(m)] for b in range(n)]
 
 
