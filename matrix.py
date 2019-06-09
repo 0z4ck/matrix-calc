@@ -15,7 +15,7 @@ def multiply(matrix_a,matrix_b):
         print "not able to multiply these matrix. rows of A and columns of B differ" 
         return False
 
-    product=[[]]
+    product=[]
     for m in range(len(matrix_a)):
         product_row = []
         for n in range(len(matrix_b[0])):
@@ -32,6 +32,3 @@ def multiply(matrix_a,matrix_b):
 
 
 
-#a=[[6,0,3],[7,1,4]]
-#b=[[7,6,4],[1,2,2],[5,3,1]]
-#multiply(a,b)
