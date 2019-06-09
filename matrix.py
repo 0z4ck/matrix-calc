@@ -25,12 +25,30 @@ def multiply(matrix_a,matrix_b):
             product_row.append(somme)
         product.append(product_row)
 
-    for p_row in product:
-        print p_row
+    """for p_row in product:
+        print p_row"""
     return product
 
 
 def randGenMatrix(m,n,absolute_max=9):
-    return [[random.randrange(absolute_max*-1,absolute_max+1) for a in range(m)] for b in range(n)]
+    return [[random.randrange(absolute_max*-1,absolute_max+1) for a in range(n)] for b in range(m)]
 
+def  prettifier(matrix):
+    s = [[str(e) for e in row] for row in matrix]
+    lens = [max(map(len, col)) for col in zip(*s)]
+    fmt = '\t'.join('{{:{}}}'.format(x) for x in lens)
+    table = [fmt.format(*row) for row in s]
+    return '\n'.join(table)
+
+def genExo(exo_id,difficulty):
+    m=random.randrange(2,5)
+    c=random.randrange(2,5)
+    n=random.randrange(2,5)
+
+    matrix_a = randGenMatrix(m,c,difficulty)
+    matrix_b = randGenMatrix(c,n,difficulty)
+
+    f = open("answer.txt","w")
+
+    p = multiply(matrix_a,matrix_b)
 
