@@ -1,5 +1,21 @@
 import random
 
+
+def determinant(matrix):
+    if len(matrix[0])!=len(matrix):
+        print "determinant is not defined for non-square matrix"
+        return False
+
+    if len(matrix)==1:
+        return matrix[0][0]
+    else:
+        res = 0
+        #for m in range(len(matrix)):
+        m = 0
+        for n in range(len(matrix)):
+                res += (-1)**(m+n)*matrix[m][n]*determinant([[matrix[cm][cn] for cn in range(len(matrix[m])) if cn!=n] for cm in range(len(matrix[0])) if cm!=m])
+        return res
+
 def multiply(matrix_a,matrix_b):
     # check if each row has the same length
     for row in matrix_a:
