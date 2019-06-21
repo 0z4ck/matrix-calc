@@ -71,6 +71,16 @@ def genExo(exo_id,difficulty):
     f.write("Exo_{}:\n{}\n\n".format(exo_id, prettifier(p)))
     f.close()
 
+def genDetExo(exo_id,difficulty):
+    m=random.randrange(2,4)
+    matrix = randGenMatrix(m,m,difficulty)
+
+    print "Exo_{}\n Calculate the determinant of :\n{}\n\n\n".format(exo_id, prettifier(matrix))
+    f = open("answer.txt","a")
+
+    p = determinant(matrix)
+    f.write("Exo_{}: {}\n\n".format(exo_id, p))
+    f.close()
     
 
 
